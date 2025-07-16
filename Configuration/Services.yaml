@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Garvinhicking\ExtbaseUploadTypeconverter\:
+    resource: '../Classes/*'
+
+  # TypeConverter needed!
+  Garvinhicking\ExtbaseUploadTypeconverter\Property\TypeConverter\UploadedFileReferenceConverter:
+    tags:
+      - name: extbase.type_converter
+        priority: 30
+        target: TYPO3\CMS\Extbase\Domain\Model\FileReference
+        sources: integer,string,array

@@ -1,0 +1,22 @@
+<html
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+        xmlns:extbaseupload="http://typo3.org/ns/Garvinhicking/ExtbaseUploadTypeconverter/ViewHelpers"
+
+        data-namespace-typo3-fluid="true">
+
+<f:debug>{item}</f:debug>
+
+<div>
+    <f:if condition="{item.file}">
+        <div>
+            Existing Filename: {item.file.originalResource.name}
+        </div>
+    </f:if>
+    <f:comment>TypeConverter needed!</f:comment>
+    <extbaseupload:upload property="file" />
+</div>
+
+<div>
+    <f:form.submit value="Save" />
+</div>
+

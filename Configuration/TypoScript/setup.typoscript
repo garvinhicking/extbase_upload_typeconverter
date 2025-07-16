@@ -1,0 +1,6 @@
+plugin.tx_extbaseuploadtypeconverter {
+  persistence.updateReferenceIndex = 1
+  settings {
+    singleFileUploadPid = 1
+  }
+}
